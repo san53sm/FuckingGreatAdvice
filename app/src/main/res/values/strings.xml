@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FuckingGreatAdvice</string>
+    <string name="tab_title_random_advice">Random</string>
+    <string name="tab_title_favorite_advices">Favorite</string>
+</resources>
