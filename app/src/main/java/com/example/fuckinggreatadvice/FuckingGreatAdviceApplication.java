@@ -21,4 +21,8 @@ public class FuckingGreatAdviceApplication extends Application {
     public static AppComponent getComponent() {
         return component;
     }
+
+    public static class Config {
+        public static final String API_URL = "http://fucking-great-advice.ru/api/";
+    }
 }

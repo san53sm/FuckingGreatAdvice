@@ -2,4 +2,8 @@
     <string name="app_name">FuckingGreatAdvice</string>
     <string name="tab_title_random_advice">Random</string>
     <string name="tab_title_favorite_advices">Favorite</string>
+    <string name="error_loading_advice">Ошибка загрузки совета. Проверьте ваше интернет соединение.</string>
+    <string name="save_to_favorite">Save to favorite</string>
+    <string name="reload">Перезагрузить</string>
+    <string name="next">Next</string>
 </resources>
