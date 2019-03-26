@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.fuckinggreatadvice.R;
+import com.example.fuckinggreatadvice.ui.fragment.FavoriteAdviceFragment;
 import com.example.fuckinggreatadvice.ui.fragment.RandomAdviceFragment;
 
 public class MainActivityAdapter extends FragmentPagerAdapter {
@@ -15,24 +16,29 @@ public class MainActivityAdapter extends FragmentPagerAdapter {
     private final static int FAVORITE_FRAGMENT_POSITION = 1;
 
     private String tabTitles[];
+    RandomAdviceFragment randomAdviceFragment;
+    FavoriteAdviceFragment favoriteAdviceFragment;
 
     public MainActivityAdapter(FragmentManager fm, Context context) {
         super(fm);
-        tabTitles = new String[] { context.getString(R.string.tab_title_random_advice),
-                                   context.getString(R.string.tab_title_favorite_advices) };
+        tabTitles = new String[]{context.getString(R.string.tab_title_random_advice),
+                context.getString(R.string.tab_title_favorite_advices)};
+        randomAdviceFragment = RandomAdviceFragment.newInstance();
+        favoriteAdviceFragment = FavoriteAdviceFragment.newInstance();
     }
 
     @Override
     public Fragment getItem(int i) {
         switch (i) {
             case RANDOM_FRAGMENT_POSITION:
-                return RandomAdviceFragment.newInstance();
+                return randomAdviceFragment;
             case FAVORITE_FRAGMENT_POSITION:
-                return RandomAdviceFragment.newInstance();
+                return favoriteAdviceFragment;
             default:
                 throw new RuntimeException("MainActivityAdapter.getItem(): No Fragment for this index!");
         }
     }
+
 
     @Override
     public int getCount() {

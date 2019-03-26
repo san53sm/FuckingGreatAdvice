@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -70,6 +71,24 @@ public class RandomAdviceFragment extends MvpAppCompatFragment implements Random
     public void showErrorLoadingAdvice() {
         progressBar.setVisibility(View.GONE);
         buttonReload.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onSavedAdviceCompletable(Advice advice) {
+        Toast.makeText(getActivity(), getActivity().getString(R.string.advice_saved_msg), Toast.LENGTH_SHORT)
+                .show();
+    }
+
+    @Override
+    public void onSavedAdviceError() {
+        Toast.makeText(getActivity(), getActivity().getString(R.string.advice_error_saved_msg), Toast.LENGTH_SHORT)
+                .show();
+    }
+
+    @Override
+    public void onErrorSaveDublicateAdvice() {
+        Toast.makeText(getActivity(), getActivity().getString(R.string.dublicate_advice_error_saved_msg), Toast.LENGTH_SHORT)
+                .show();
     }
 
     @OnClick(R.id.button_save_to_favorite)

@@ -6,4 +6,8 @@
     <string name="save_to_favorite">Save to favorite</string>
     <string name="reload">Перезагрузить</string>
     <string name="next">Next</string>
+    <string name="advice_saved_msg">Advice saved!</string>
+    <string name="advice_error_saved_msg">Error saved advice!</string>
+    <string name="dublicate_advice_error_saved_msg">Error saved! Dublicate advice!</string>
+    <string name="advice_deleted_msg">Advice deleted</string>
 </resources>

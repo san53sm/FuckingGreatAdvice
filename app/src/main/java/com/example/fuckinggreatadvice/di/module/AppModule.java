@@ -1,8 +1,10 @@
 package com.example.fuckinggreatadvice.di.module;
 
 import android.app.Application;
+import android.arch.persistence.room.Room;
 
 import com.example.fuckinggreatadvice.FuckingGreatAdviceApplication;
+import com.example.fuckinggreatadvice.database.AppDatabase;
 import com.example.fuckinggreatadvice.interfaces.FuckingGreatAdviceAPI;
 import com.example.fuckinggreatadvice.mvp.model.NetworkInteractor;
 import com.google.gson.Gson;
@@ -59,5 +61,11 @@ public class AppModule {
     OkHttpClient provideOkHttpClient() {
         OkHttpClient.Builder client = new OkHttpClient.Builder();
         return client.build();
+    }
+
+    @Provides
+    @Singleton
+    AppDatabase provideAppDatabase(Application application) {
+        return Room.databaseBuilder(application.getApplicationContext(), AppDatabase.class, "database").build();
     }
 }
