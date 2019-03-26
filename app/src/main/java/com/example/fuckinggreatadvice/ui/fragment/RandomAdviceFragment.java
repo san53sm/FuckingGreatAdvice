@@ -87,7 +87,7 @@ public class RandomAdviceFragment extends MvpAppCompatFragment implements Random
 
     @Override
     public void onErrorSaveDublicateAdvice() {
-        Toast.makeText(getActivity(), getActivity().getString(R.string.dublicate_advice_error_saved_msg), Toast.LENGTH_SHORT)
+        Toast.makeText(getActivity(), getActivity().getString(R.string.duplicate_advice_error_saved_msg), Toast.LENGTH_SHORT)
                 .show();
     }
 
